@@ -1,8 +1,9 @@
 // VehicleShowcase.tsx
 "use client";
 import { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
-import { useAppStore } from "@/store";
+import { useInView } from "framer-motion";
+import { useAppStore, type VehiclePart } from "@/store";
+import Image from "next/image";
 
 const VehicleShowcase = () => {
   const { 
@@ -20,7 +21,7 @@ const VehicleShowcase = () => {
   const ref = useRef(null);
   const passengerVideoRef = useRef<HTMLVideoElement>(null);
   const commercialVideoRef = useRef<HTMLVideoElement>(null);
-  const inView = useInView(ref, { once: true });
+  useInView(ref, { once: true });
 
   const handleToggle = () => {
     toggleVehicleType();
@@ -28,7 +29,7 @@ const VehicleShowcase = () => {
 
   const handlePartClick = (part: string, e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent event bubbling to parent (which would toggle vehicle type)
-    setActivePart(part as any);
+    setActivePart(part as VehiclePart);
   };
 
   const togglePlayPause = (e: React.MouseEvent) => {
@@ -240,7 +241,9 @@ const VehicleShowcase = () => {
                     onClick={(e) => handlePartClick(part, e)}
                   >
                     <div className="flex items-center justify-center">
-                        <img 
+                        <Image 
+                         width="100"
+                         height="100"
                           src={getIconSource(part)} 
                           alt={part} 
                           className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 object-contain" 

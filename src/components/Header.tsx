@@ -6,6 +6,14 @@ import { useState } from "react";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <header className="max-md:fixed max-md:top-0 max-md:left-0 max-md:right-0 z-50 bg-white py-4 px-4 sm:px-6 flex justify-between items-center 2xl:px-28">
       <div className="flex items-center">
@@ -38,9 +46,12 @@ export default function Header() {
       
       {/* Desktop navigation */}
       <div className="hidden lg:flex items-center space-x-8">
-        <Link href="/contact" className="bg-sky-400 text-white px-6 py-2 rounded-full transition-colors">
+        <button
+          onClick={scrollToContact}
+          className="bg-sky-400 text-white px-6 py-2 rounded-full transition-colors"
+        >
           Contact Us
-        </Link>
+        </button>
         <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
           <Icons.linkedin/>
         </Link>
@@ -56,18 +67,17 @@ export default function Header() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-md py-4 px-6 flex flex-col items-center space-y-4">
-          <Link 
-            href="/contact" 
+          <button 
+            onClick={scrollToContact}
             className="bg-sky-400 text-white px-6 py-2 rounded-full transition-colors w-full text-center"
-            onClick={() => setIsMenuOpen(false)}
           >
             Contact Us
-          </Link>
+          </button>
           <div className="flex items-center justify-center space-x-6 w-full">
             <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
               <Icons.linkedin/>
             </Link>
-            <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn" className="flex flex-row gap-1 items-center">
+            <Link href="/" target="_blank" aria-label="Translate" className="flex flex-row gap-1 items-center">
               <Icons.translate/>
               <button className="flex text-sm items-center text-gray-800">
               <span>ENG</span>

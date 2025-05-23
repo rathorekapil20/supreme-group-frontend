@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 type VehicleType = 'passenger' | 'commercial'
-type VehiclePart = 'Complete Body' | 'Front' | 'Cabin' | 'Trunk' | 'Exterior'
+export type VehiclePart = 'Complete Body' | 'Front' | 'Cabin' | 'Trunk' | 'Exterior'
 
 interface AppState {
   // Vehicle showcase state
