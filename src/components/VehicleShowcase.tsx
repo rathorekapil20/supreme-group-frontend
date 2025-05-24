@@ -151,7 +151,7 @@ const VehicleShowcase = () => {
                 transition: 'top 0.5s ease-out, opacity 0.5s ease-out'
               }}
             >
-              <h3 className="text-lg sm:text-xl md:text-4xl font-semibold mb-1">
+              <h3 className="text-lg sm:text-xl md:text-3xl font-semibold mb-1">
                 Passenger vehicles
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-xs">
@@ -168,7 +168,7 @@ const VehicleShowcase = () => {
                 transition: 'top 0.5s ease-out, opacity 0.5s ease-out'
               }}
             >
-              <h3 className="text-lg sm:text-xl md:text-4xl font-semibold mb-1">
+              <h3 className="text-lg sm:text-xl md:text-3xl font-semibold mb-1">
                 Commercial vehicles
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-gray-300 max-w-xs">
