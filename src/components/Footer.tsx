@@ -3,10 +3,10 @@ import { Icons } from "./icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-8 sm:py-12 relative min-h-[50vh] sm:h-[70vh]">
+    <footer className="bg-white  relative min-h-[50vh] sm:h-[70vh]">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex justify-start">
-          <Icons.supreme className="w-32 h-32 sm:w-48 sm:h-48" />
+          <Icons.supreme className="w-32 h-32 sm:w-48 sm:h-36 " />
         </div>
         
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
